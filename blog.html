@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Car care tips, maintenance advice, and industry news from our expert team.">
+  <title>Blog - Car Wash</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;420;460;500;520;540;580&family=Playfair+Display:wght@500;520;540;580&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">Car Wash</a>
+
+      <ul class="navbar-nav">
+        <li><a href="index.html" class="navbar-link">Home</a></li>
+        <li><a href="home2.html" class="navbar-link">Home 2</a></li>
+        <li><a href="services.html" class="navbar-link">Services</a></li>
+        <li><a href="about.html" class="navbar-link">About</a></li>
+        <li><a href="blog.html" class="navbar-link active">Blog</a></li>
+        <li><a href="contact.html" class="navbar-link">Contact</a></li>
+        <li><a href="dashboard.html" class="navbar-link">Dashboard</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <button class="theme-toggle navbar-theme" aria-label="Toggle theme">
+          <i class="ph ph-sun sun-icon"></i>
+          <i class="ph ph-moon moon-icon" style="display: none;"></i>
+        </button>
+        <button class="rtl-toggle" aria-label="Toggle RTL">
+          <i class="ph ph-arrows-left-right"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button class="navbar-toggle" aria-label="Open menu">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hamburger Drawer -->
+  <div class="drawer-overlay"></div>
+  <div class="drawer">
+    <div class="drawer-header">
+      <span class="navbar-logo">Car Wash</span>
+      <button class="drawer-close" aria-label="Close menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="index.html" class="drawer-link">Home</a>
+      <a href="home2.html" class="drawer-link">Home 2</a>
+      <a href="services.html" class="drawer-link">Services</a>
+      <a href="about.html" class="drawer-link">About</a>
+      <a href="blog.html" class="drawer-link active">Blog</a>
+      <a href="contact.html" class="drawer-link">Contact</a>
+      <a href="dashboard.html" class="drawer-link">Dashboard</a>
+    </nav>
+    <div class="drawer-actions">
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="ph ph-sun sun-icon"></i>
+        <i class="ph ph-moon moon-icon" style="display: none;"></i>
+      </button>
+      <button class="rtl-toggle" aria-label="Toggle RTL">
+        <i class="ph ph-arrows-left-right"></i>
+      </button>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <section class="section" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); color: white; padding-top: 120px; padding-bottom: 80px;">
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title" style="color: white;">Our Blog</h1>
+        <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">Car care tips, maintenance advice, and industry insights</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-3">
+        <article class="card" style="text-align: left; align-items: flex-start;">
+          <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=600&q=80" alt="Blog post" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius); margin-bottom: var(--space-md);">
+          <div style="margin-bottom: var(--space-sm);">
+            <span style="background: var(--color-secondary); color: white; padding: 4px 12px; border-radius: 50px; font-size: var(--size-caption);">Tips</span>
+          </div>
+          <h3 class="card-title" style="text-align: left;">5 Essential Car Care Tips for Winter</h3>
+          <p class="card-description" style="margin-bottom: var(--space-md); text-align: left;">Protect your vehicle from harsh winter conditions with these essential maintenance tips.</p>
+          <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md); font-size: var(--size-caption); color: var(--color-text-light);">
+            <span><i class="ph ph-calendar"></i> Jan 15, 2024</span>
+            <span><i class="ph ph-user"></i> James Anderson</span>
+          </div>
+          <a href="blog-single.html" class="btn btn-outline" style="margin-top: auto;">Read More</a>
+        </article>
+
+        <article class="card" style="text-align: left; align-items: flex-start;">
+          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80" alt="Blog post" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius); margin-bottom: var(--space-md);">
+          <div style="margin-bottom: var(--space-sm);">
+            <span style="background: var(--color-accent); color: var(--color-primary); padding: 4px 12px; border-radius: 50px; font-size: var(--size-caption);">Guide</span>
+          </div>
+          <h3 class="card-title" style="text-align: left;">The Benefits of Ceramic Coating</h3>
+          <p class="card-description" style="margin-bottom: var(--space-md); text-align: left;">Discover why ceramic coating is the ultimate paint protection for your vehicle.</p>
+          <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md); font-size: var(--size-caption); color: var(--color-text-light);">
+            <span><i class="ph ph-calendar"></i> Jan 10, 2024</span>
+            <span><i class="ph ph-user"></i> Michael Chen</span>
+          </div>
+          <a href="blog-single.html" class="btn btn-outline" style="margin-top: auto;">Read More</a>
+        </article>
+
+        <article class="card" style="text-align: left; align-items: flex-start;">
+          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80" alt="Blog post" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius); margin-bottom: var(--space-md);">
+          <div style="margin-bottom: var(--space-sm);">
+            <span style="background: var(--color-primary); color: white; padding: 4px 12px; border-radius: 50px; font-size: var(--size-caption);">Maintenance</span>
+          </div>
+          <h3 class="card-title" style="text-align: left;">How Often Should You Detail Your Car?</h3>
+          <p class="card-description" style="margin-bottom: var(--space-md); text-align: left;">Learn the optimal frequency for car detailing based on your driving habits and environment.</p>
+          <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md); font-size: var(--size-caption); color: var(--color-text-light);">
+            <span><i class="ph ph-calendar"></i> Jan 5, 2024</span>
+            <span><i class="ph ph-user"></i> Sarah Mitchell</span>
+          </div>
+          <a href="blog-single.html" class="btn btn-outline" style="margin-top: auto;">Read More</a>
+        </article>
+
+        <article class="card" style="text-align: left; align-items: flex-start;">
+          <img src="https://images.unsplash.com/photo-1616422285623-13ff0162193c?w=600&q=80" alt="Blog post" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius); margin-bottom: var(--space-md);">
+          <div style="margin-bottom: var(--space-sm);">
+            <span style="background: var(--color-secondary); color: white; padding: 4px 12px; border-radius: 50px; font-size: var(--size-caption);">Eco-Friendly</span>
+          </div>
+          <h3 class="card-title" style="text-align: left;">Eco-Friendly Car Wash Products</h3>
+          <p class="card-description" style="margin-bottom: var(--space-md); text-align: left;">Explore sustainable car care products that are safe for your vehicle and the environment.</p>
+          <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md); font-size: var(--size-caption); color: var(--color-text-light);">
+            <span><i class="ph ph-calendar"></i> Dec 28, 2023</span>
+            <span><i class="ph ph-user"></i> Emily Rodriguez</span>
+          </div>
+          <a href="blog-single.html" class="btn btn-outline" style="margin-top: auto;">Read More</a>
+        </article>
+
+        <article class="card" style="text-align: left; align-items: flex-start;">
+          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80" alt="Blog post" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius); margin-bottom: var(--space-md);">
+          <div style="margin-bottom: var(--space-sm);">
+            <span style="background: var(--color-accent); color: var(--color-primary); padding: 4px 12px; border-radius: 50px; font-size: var(--size-caption);">Interior</span>
+          </div>
+          <h3 class="card-title" style="text-align: left;">Interior Cleaning Best Practices</h3>
+          <p class="card-description" style="margin-bottom: var(--space-md); text-align: left;">Master the art of interior car cleaning with professional techniques and product recommendations.</p>
+          <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md); font-size: var(--size-caption); color: var(--color-text-light);">
+            <span><i class="ph ph-calendar"></i> Dec 20, 2023</span>
+            <span><i class="ph ph-user"></i> Michael Chen</span>
+          </div>
+          <a href="blog-single.html" class="btn btn-outline" style="margin-top: auto;">Read More</a>
+        </article>
+
+        <article class="card" style="text-align: left; align-items: flex-start;">
+          <img src="https://images.unsplash.com/photo-1503376763036-066120622c74?w=600&q=80" alt="Blog post" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius); margin-bottom: var(--space-md);">
+          <div style="margin-bottom: var(--space-sm);">
+            <span style="background: var(--color-primary); color: white; padding: 4px 12px; border-radius: 50px; font-size: var(--size-caption);">News</span>
+          </div>
+          <h3 class="card-title" style="text-align: left;">New Equipment for 2024</h3>
+          <p class="card-description" style="margin-bottom: var(--space-md); text-align: left;">We're upgrading our facility with state-of-the-art equipment to serve you better.</p>
+          <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md); font-size: var(--size-caption); color: var(--color-text-light);">
+            <span><i class="ph ph-calendar"></i> Dec 15, 2023</span>
+            <span><i class="ph ph-user"></i> James Anderson</span>
+          </div>
+          <a href="blog-single.html" class="btn btn-outline" style="margin-top: auto;">Read More</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Article Section -->
+  <section class="section" style="background-color: var(--color-surface);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Article</h2>
+        <p class="section-subtitle">Our most popular and comprehensive guide</p>
+      </div>
+      <div class="grid grid-2" style="align-items: center;">
+        <div>
+          <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=800&q=80" alt="Featured article" style="border-radius: var(--radius); box-shadow: var(--shadow);">
+        </div>
+        <div>
+          <div style="margin-bottom: var(--space-sm);">
+            <span style="background: var(--color-accent); color: var(--color-primary); padding: 4px 12px; border-radius: 50px; font-size: var(--size-caption); font-weight: var(--weight-label);">Featured</span>
+          </div>
+          <h2 style="margin-bottom: var(--space-md);">The Ultimate Guide to Car Detailing</h2>
+          <p style="margin-bottom: var(--space-md);">Everything you need to know about professional car detailing, from basic washes to advanced ceramic coating. This comprehensive guide covers techniques, products, and maintenance schedules.</p>
+          <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-lg); font-size: var(--size-caption); color: var(--color-text-light);">
+            <span><i class="ph ph-calendar"></i> Jan 20, 2024</span>
+            <span><i class="ph ph-clock"></i> 15 min read</span>
+            <span><i class="ph ph-user"></i> James Anderson</span>
+          </div>
+          <a href="blog-single.html" class="btn btn-primary">Read Full Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Browse by Category</h2>
+        <p class="section-subtitle">Find articles on topics that interest you</p>
+      </div>
+      <div class="grid grid-4">
+        <div class="card">
+          <div class="card-icon">
+            <i class="ph ph-lightbulb"></i>
+          </div>
+          <h3 class="card-title">Tips & Tricks</h3>
+          <p class="card-description">Practical advice for maintaining your vehicle's appearance and performance.</p>
+          <a href="#" class="btn btn-outline" style="margin-top: var(--space-md);">View 12 Articles</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="ph ph-book-open"></i>
+          </div>
+          <h3 class="card-title">Guides</h3>
+          <p class="card-description">In-depth tutorials and step-by-step instructions for car care tasks.</p>
+          <a href="#" class="btn btn-outline" style="margin-top: var(--space-md);">View 8 Articles</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="ph ph-wrench"></i>
+          </div>
+          <h3 class="card-title">Maintenance</h3>
+          <p class="card-description">Scheduled maintenance advice and preventive care recommendations.</p>
+          <a href="#" class="btn btn-outline" style="margin-top: var(--space-md);">View 15 Articles</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="ph ph-leaf"></i>
+          </div>
+          <h3 class="card-title">Eco-Friendly</h3>
+          <p class="card-description">Sustainable car care practices and environmentally friendly products.</p>
+          <a href="#" class="btn btn-outline" style="margin-top: var(--space-md);">View 6 Articles</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); color: white; text-align: center;">
+    <div class="container">
+      <h2 class="section-title" style="color: white;">Stay Updated</h2>
+      <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9); margin-bottom: var(--space-xl);">Subscribe to our newsletter for the latest car care tips and exclusive offers.</p>
+      <form style="max-width: 500px; margin: 0 auto; display: flex; gap: var(--space-sm);">
+        <input type="email" placeholder="Enter your email" required style="flex: 1; padding: 12px 16px; border: none; border-radius: var(--radius); font-family: var(--font-body);">
+        <button type="submit" class="btn btn-accent">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-logo">Car Wash</h3>
+          <p class="footer-description">Premium car wash and auto detailing services. We treat every vehicle with the care and attention it deserves.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <nav class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="services.html" class="footer-link">Services</a>
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="blog.html" class="footer-link">Blog</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer-title">Services</h4>
+          <nav class="footer-links">
+            <a href="services.html" class="footer-link">Express Wash</a>
+            <a href="services.html" class="footer-link">Full Detail</a>
+            <a href="services.html" class="footer-link">Ceramic Coating</a>
+            <a href="services.html" class="footer-link">Interior Cleaning</a>
+            <a href="services.html" class="footer-link">Paint Correction</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact Info</h4>
+          <nav class="footer-links">
+            <a href="#" class="footer-link"><i class="ph ph-map-pin"></i> 123 Main Street, City</a>
+            <a href="tel:+1234567890" class="footer-link"><i class="ph ph-phone"></i> +1-234-567-8900</a>
+            <a href="mailto:info@carwash.com" class="footer-link"><i class="ph ph-envelope"></i> info@carwash.com</a>
+            <a href="#" class="footer-link"><i class="ph ph-clock"></i> Mon-Sat: 8AM - 6PM</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Car Wash. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

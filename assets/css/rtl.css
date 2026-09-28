@@ -1,0 +1,124 @@
+/* ============================================
+   RTL OVERRIDES
+   ============================================ */
+
+/* RTL Direction */
+[dir="rtl"] {
+  direction: rtl;
+}
+
+/* Drawer - Slide from LEFT in RTL mode */
+[dir="rtl"] .drawer {
+  right: auto;
+  left: -100%;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+[dir="rtl"] .drawer.open {
+  left: 0;
+  right: auto;
+}
+
+/* Navbar Link Active State */
+[dir="rtl"] .navbar-link.active::after {
+  left: auto;
+  right: 0;
+}
+
+/* Footer Link Hover */
+[dir="rtl"] .footer-link:hover {
+  padding-inline-start: 0;
+  padding-inline-end: 8px;
+}
+
+/* Form Checkbox */
+[dir="rtl"] .form-checkbox {
+  flex-direction: row-reverse;
+}
+
+/* Card Icon Spacing */
+[dir="rtl"] .card-icon {
+  margin-inline-end: 0;
+  margin-inline-start: var(--space-md);
+}
+
+/* Button Gap */
+[dir="rtl"] .btn {
+  gap: var(--space-xs);
+}
+
+/* Section Header Alignment */
+[dir="rtl"] .section-header {
+  text-align: center;
+}
+
+/* Grid Gap */
+[dir="rtl"] .grid {
+  gap: var(--space-lg);
+}
+
+/* Flex Direction for Specific Components */
+[dir="rtl"] .flex-between {
+  flex-direction: row;
+}
+
+[dir="rtl"] .flex-column {
+  flex-direction: column;
+}
+
+/* Navbar Actions */
+[dir="rtl"] .navbar-actions {
+  gap: var(--space-md);
+}
+
+/* Drawer Actions */
+[dir="rtl"] .drawer-actions {
+  border-top: 1px solid var(--color-border);
+}
+
+/* Form Error Position */
+[dir="rtl"] .form-error {
+  text-align: right;
+}
+
+/* Focus Ring on Form Inputs */
+[dir="rtl"] .form-input:focus {
+  box-shadow: 0 0 0 3px rgba(62, 146, 204, 0.1);
+}
+
+/* RTL Toggle Icon Direction */
+[dir="rtl"] .rtl-toggle svg {
+  transform: scaleX(-1);
+}
+
+/* Hero Content */
+[dir="rtl"] .hero-content {
+  text-align: center;
+}
+
+/* Hero Buttons */
+[dir="rtl"] .hero-buttons {
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .hero-buttons {
+    flex-direction: column;
+  }
+}
+
+/* Footer Grid */
+[dir="rtl"] .footer-grid {
+  direction: rtl;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  [dir="rtl"] .drawer {
+    left: -100%;
+  }
+
+  [dir="rtl"] .drawer.open {
+    left: 0;
+  }
+}

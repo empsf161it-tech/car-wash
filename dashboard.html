@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Car Wash Dashboard - Manage your bookings, appointments, and account settings.">
+  <title>Dashboard - Car Wash</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;420;460;500;520;540;580&family=Playfair+Display:wght@500;520;540;580&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+
+  <style>
+    .dashboard-layout {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      min-height: 100vh;
+      padding-top: 72px;
+    }
+
+    .dashboard-sidebar {
+      background: var(--color-surface);
+      padding: var(--space-lg);
+      border-right: 1px solid var(--color-border);
+      position: sticky;
+      top: 72px;
+      height: calc(100vh - 72px);
+      overflow-y: auto;
+    }
+
+    .dashboard-content {
+      padding: var(--space-xl);
+    }
+
+    .dashboard-nav {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .dashboard-nav-link {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      color: var(--color-text-light);
+      transition: var(--transition);
+      font-size: var(--size-label);
+      font-weight: var(--weight-label);
+    }
+
+    .dashboard-nav-link:hover,
+    .dashboard-nav-link.active {
+      background: var(--color-secondary);
+      color: white;
+    }
+
+    .dashboard-nav-link i {
+      font-size: 20px;
+    }
+
+    .stat-card {
+      background: var(--color-surface);
+      padding: var(--space-lg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: var(--weight-h1);
+      font-family: var(--font-heading);
+      color: var(--color-primary);
+      margin-bottom: var(--space-xs);
+    }
+
+    .stat-label {
+      font-size: var(--size-label);
+      color: var(--color-text-light);
+    }
+
+    .dashboard-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--color-surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .dashboard-table th,
+    .dashboard-table td {
+      padding: 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .dashboard-table th {
+      background: var(--color-primary);
+      color: white;
+      font-weight: var(--weight-label);
+    }
+
+    .dashboard-table tr:hover {
+      background: var(--color-surface);
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: var(--size-caption);
+      font-weight: var(--weight-label);
+    }
+
+    .status-pending {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .status-completed {
+      background: #D1FAE5;
+      color: #065F46;
+    }
+
+    .status-cancelled {
+      background: #FEE2E2;
+      color: #991B1B;
+    }
+
+    @media (max-width: 1024px) {
+      .dashboard-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard-sidebar {
+        display: none;
+      }
+
+      .dashboard-content {
+        padding: var(--space-lg);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .dashboard-content {
+        padding: var(--space-md);
+      }
+
+      .dashboard-table {
+        font-size: var(--size-caption);
+      }
+
+      .dashboard-table th,
+      .dashboard-table td {
+        padding: 12px 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">Car Wash</a>
+
+      <ul class="navbar-nav">
+        <li><a href="index.html" class="navbar-link">Home</a></li>
+        <li><a href="home2.html" class="navbar-link">Home 2</a></li>
+        <li><a href="services.html" class="navbar-link">Services</a></li>
+        <li><a href="about.html" class="navbar-link">About</a></li>
+        <li><a href="blog.html" class="navbar-link">Blog</a></li>
+        <li><a href="contact.html" class="navbar-link">Contact</a></li>
+        <li><a href="dashboard.html" class="navbar-link active">Dashboard</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <button class="theme-toggle navbar-theme" aria-label="Toggle theme">
+          <i class="ph ph-sun sun-icon"></i>
+          <i class="ph ph-moon moon-icon" style="display: none;"></i>
+        </button>
+        <button class="rtl-toggle" aria-label="Toggle RTL">
+          <i class="ph ph-arrows-left-right"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button class="navbar-toggle" aria-label="Open menu">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hamburger Drawer -->
+  <div class="drawer-overlay"></div>
+  <div class="drawer">
+    <div class="drawer-header">
+      <span class="navbar-logo">Car Wash</span>
+      <button class="drawer-close" aria-label="Close menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="index.html" class="drawer-link">Home</a>
+      <a href="home2.html" class="drawer-link">Home 2</a>
+      <a href="services.html" class="drawer-link">Services</a>
+      <a href="about.html" class="drawer-link">About</a>
+      <a href="blog.html" class="drawer-link">Blog</a>
+      <a href="contact.html" class="drawer-link">Contact</a>
+      <a href="dashboard.html" class="drawer-link active">Dashboard</a>
+    </nav>
+    <div class="drawer-actions">
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="ph ph-sun sun-icon"></i>
+        <i class="ph ph-moon moon-icon" style="display: none;"></i>
+      </button>
+      <button class="rtl-toggle" aria-label="Toggle RTL">
+        <i class="ph ph-arrows-left-right"></i>
+      </button>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+    </div>
+  </div>
+
+  <!-- Dashboard Layout -->
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <h3 style="margin-bottom: var(--space-lg);">Dashboard</h3>
+      <nav class="dashboard-nav">
+        <a href="#" class="dashboard-nav-link active">
+          <i class="ph ph-chart-line-up"></i>
+          Overview
+        </a>
+        <a href="#" class="dashboard-nav-link">
+          <i class="ph ph-calendar-check"></i>
+          Bookings
+        </a>
+        <a href="#" class="dashboard-nav-link">
+          <i class="ph ph-users"></i>
+          Users
+        </a>
+        <a href="#" class="dashboard-nav-link">
+          <i class="ph ph-article"></i>
+          Content
+        </a>
+        <a href="#" class="dashboard-nav-link">
+          <i class="ph ph-chat-circle-dots"></i>
+          Messages
+        </a>
+        <a href="#" class="dashboard-nav-link">
+          <i class="ph ph-gear"></i>
+          Settings
+        </a>
+        <a href="#" class="dashboard-nav-link">
+          <i class="ph ph-chart-bar"></i>
+          Reports
+        </a>
+        <a href="index.html" class="dashboard-nav-link" style="margin-top: var(--space-lg); color: var(--color-error);">
+          <i class="ph ph-sign-out"></i>
+          Logout
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+      <div class="section-header" style="text-align: left; margin-bottom: var(--space-xl);">
+        <h1 class="section-title">Welcome back, James!</h1>
+        <p class="section-subtitle" style="margin: 0;">Here's what's happening with your car wash business today.</p>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="grid grid-4" style="margin-bottom: var(--space-xl);">
+        <div class="stat-card">
+          <div class="stat-number">156</div>
+          <div class="stat-label">Total Bookings</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">$4,820</div>
+          <div class="stat-label">Revenue</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">12</div>
+          <div class="stat-label">Pending Orders</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">4.9</div>
+          <div class="stat-label">Customer Rating</div>
+        </div>
+      </div>
+
+      <!-- Recent Bookings Table -->
+      <div style="margin-bottom: var(--space-xl);">
+        <div class="flex-between" style="margin-bottom: var(--space-md);">
+          <h2>Recent Bookings</h2>
+          <a href="#" class="btn btn-outline" style="padding: 8px 16px;">View All</a>
+        </div>
+        <table class="dashboard-table">
+          <thead>
+            <tr>
+              <th>Booking ID</th>
+              <th>Customer</th>
+              <th>Service</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#BW-001</td>
+              <td>John Smith</td>
+              <td>Full Detail</td>
+              <td>Jan 15, 2024</td>
+              <td><span class="status-badge status-completed">Completed</span></td>
+              <td>$149.99</td>
+            </tr>
+            <tr>
+              <td>#BW-002</td>
+              <td>Sarah Johnson</td>
+              <td>Ceramic Coating</td>
+              <td>Jan 16, 2024</td>
+              <td><span class="status-badge status-pending">Pending</span></td>
+              <td>$499.99</td>
+            </tr>
+            <tr>
+              <td>#BW-003</td>
+              <td>Mike Davis</td>
+              <td>Express Wash</td>
+              <td>Jan 17, 2024</td>
+              <td><span class="status-badge status-completed">Completed</span></td>
+              <td>$29.99</td>
+            </tr>
+            <tr>
+              <td>#BW-004</td>
+              <td>Emily Brown</td>
+              <td>Interior Detail</td>
+              <td>Jan 18, 2024</td>
+              <td><span class="status-badge status-cancelled">Cancelled</span></td>
+              <td>$89.99</td>
+            </tr>
+            <tr>
+              <td>#BW-005</td>
+              <td>Robert Chen</td>
+              <td>Paint Correction</td>
+              <td>Jan 19, 2024</td>
+              <td><span class="status-badge status-pending">Pending</span></td>
+              <td>$199.99</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="grid grid-3">
+        <div class="card" style="text-align: left; align-items: flex-start;">
+          <div class="card-icon" style="margin-bottom: var(--space-md);">
+            <i class="ph ph-calendar-plus"></i>
+          </div>
+          <h3 class="card-title" style="text-align: left;">New Booking</h3>
+          <p class="card-description" style="text-align: left; margin-bottom: var(--space-md);">Create a new booking for a customer</p>
+          <a href="#" class="btn btn-primary" style="margin-top: auto;">Create Booking</a>
+        </div>
+        <div class="card" style="text-align: left; align-items: flex-start;">
+          <div class="card-icon" style="margin-bottom: var(--space-md);">
+            <i class="ph ph-user-plus"></i>
+          </div>
+          <h3 class="card-title" style="text-align: left;">Add Customer</h3>
+          <p class="card-description" style="text-align: left; margin-bottom: var(--space-md);">Register a new customer in the system</p>
+          <a href="#" class="btn btn-secondary" style="margin-top: auto;">Add Customer</a>
+        </div>
+        <div class="card" style="text-align: left; align-items: flex-start;">
+          <div class="card-icon" style="margin-bottom: var(--space-md);">
+            <i class="ph ph-chart-pie"></i>
+          </div>
+          <h3 class="card-title" style="text-align: left;">View Reports</h3>
+          <p class="card-description" style="text-align: left; margin-bottom: var(--space-md);">Generate and view business reports</p>
+          <a href="#" class="btn btn-outline" style="margin-top: auto;">View Reports</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

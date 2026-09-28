@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Premium car wash and auto detailing services. Professional vehicle care with eco-friendly products and expert technicians.">
+  <title>Car Wash - Premium Auto Detailing Services</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;420;460;500;520;540;580&family=Playfair+Display:wght@500;520;540;580&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+
+  <style>
+    /* Home 2 Specific Styles */
+    .hero-2 {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background-color: var(--color-surface);
+      position: relative;
+      overflow: hidden;
+      padding-top: 72px;
+    }
+
+    .hero-2-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2xl);
+      align-items: center;
+    }
+
+    .hero-2-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-2-title {
+      color: var(--color-text);
+      margin-bottom: var(--space-md);
+      font-size: 4rem;
+      line-height: 1.1;
+    }
+
+    .hero-2-subtitle {
+      font-size: var(--size-lead);
+      font-weight: var(--weight-lead);
+      color: var(--color-text-light);
+      margin-bottom: var(--space-xl);
+    }
+
+    .hero-2-image {
+      position: relative;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-2-image img {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .hero-2-badges {
+      display: flex;
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+
+    .hero-2-badge {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+      padding: 8px 16px;
+      background-color: var(--color-secondary);
+      color: white;
+      border-radius: 50px;
+      font-size: var(--size-caption);
+      font-weight: var(--weight-label);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .typing-effect {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid var(--color-secondary);
+      animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+    }
+
+    .interactive-counter {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      color: white;
+      padding: var(--space-2xl) 0;
+    }
+
+    .counter-item {
+      text-align: center;
+    }
+
+    .counter-number {
+      font-size: 3rem;
+      font-weight: var(--weight-h1);
+      font-family: var(--font-heading);
+      margin-bottom: var(--space-xs);
+    }
+
+    .counter-label {
+      font-size: var(--size-label);
+      font-weight: var(--weight-label);
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      .hero-2-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-2-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-2-badges {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">Car Wash</a>
+
+      <ul class="navbar-nav">
+        <li><a href="index.html" class="navbar-link">Home</a></li>
+        <li><a href="home2.html" class="navbar-link active">Home 2</a></li>
+        <li><a href="services.html" class="navbar-link">Services</a></li>
+        <li><a href="about.html" class="navbar-link">About</a></li>
+        <li><a href="blog.html" class="navbar-link">Blog</a></li>
+        <li><a href="contact.html" class="navbar-link">Contact</a></li>
+        <li><a href="dashboard.html" class="navbar-link">Dashboard</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <button class="theme-toggle navbar-theme" aria-label="Toggle theme">
+          <i class="ph ph-sun sun-icon"></i>
+          <i class="ph ph-moon moon-icon" style="display: none;"></i>
+        </button>
+        <button class="rtl-toggle" aria-label="Toggle RTL">
+          <i class="ph ph-arrows-left-right"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button class="navbar-toggle" aria-label="Open menu">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hamburger Drawer -->
+  <div class="drawer-overlay"></div>
+  <div class="drawer">
+    <div class="drawer-header">
+      <span class="navbar-logo">Car Wash</span>
+      <button class="drawer-close" aria-label="Close menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="index.html" class="drawer-link">Home</a>
+      <a href="home2.html" class="drawer-link active">Home 2</a>
+      <a href="services.html" class="drawer-link">Services</a>
+      <a href="about.html" class="drawer-link">About</a>
+      <a href="blog.html" class="drawer-link">Blog</a>
+      <a href="contact.html" class="drawer-link">Contact</a>
+      <a href="dashboard.html" class="drawer-link">Dashboard</a>
+    </nav>
+    <div class="drawer-actions">
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="ph ph-sun sun-icon"></i>
+        <i class="ph ph-moon moon-icon" style="display: none;"></i>
+      </button>
+      <button class="rtl-toggle" aria-label="Toggle RTL">
+        <i class="ph ph-arrows-left-right"></i>
+      </button>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+    </div>
+  </div>
+
+  <!-- Hero Section 2 -->
+  <section class="hero-2">
+    <div class="container">
+      <div class="hero-2-grid">
+        <div class="hero-2-content">
+          <div class="hero-2-badges">
+            <div class="hero-2-badge">
+              <i class="ph ph-star-fill"></i>
+              <span>4.9 Rating</span>
+            </div>
+            <div class="hero-2-badge">
+              <i class="ph ph-users"></i>
+              <span>10,000+ Customers</span>
+            </div>
+          </div>
+          <h1 class="hero-2-title">
+            <span class="typing-effect">Transform Your Vehicle</span>
+          </h1>
+          <p class="hero-2-subtitle">Discover professional car care that protects your investment and delivers showroom-quality results every time.</p>
+          <div class="flex" style="gap: var(--space-md);">
+            <a href="services.html" class="btn btn-primary">Get Started</a>
+            <a href="about.html" class="btn btn-outline">Learn More</a>
+          </div>
+        </div>
+        <div class="hero-2-image">
+          <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=800&q=80" alt="Premium car detailing service">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Counter Section -->
+  <section class="interactive-counter">
+    <div class="container">
+      <div class="grid grid-4">
+        <div class="counter-item">
+          <div class="counter-number" data-target="15000">0</div>
+          <div class="counter-label">Cars Washed</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-number" data-target="12">0</div>
+          <div class="counter-label">Years Experience</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-number" data-target="25">0</div>
+          <div class="counter-label">Expert Technicians</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-number" data-target="99">0</div>
+          <div class="counter-label">% Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Premium Services</h2>
+        <p class="section-subtitle">Choose from our range of professional car care services designed to keep your vehicle in pristine condition.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-icon">
+            <i class="ph ph-car"></i>
+          </div>
+          <h3 class="card-title">Exterior Wash</h3>
+          <p class="card-description">Thorough exterior cleaning with premium products, hand wash, and wheel detailing.</p>
+          <a href="services.html" class="btn btn-secondary" style="margin-top: var(--space-md);">Learn More</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="ph ph-armchair"></i>
+          </div>
+          <h3 class="card-title">Interior Detail</h3>
+          <p class="card-description">Deep cleaning of interior surfaces, upholstery, leather conditioning, and odor removal.</p>
+          <a href="services.html" class="btn btn-secondary" style="margin-top: var(--space-md);">Learn More</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="ph ph-paint-brush"></i>
+          </div>
+          <h3 class="card-title">Paint Protection</h3>
+          <p class="card-description">Advanced ceramic coating and paint sealant for long-lasting protection and shine.</p>
+          <a href="services.html" class="btn btn-secondary" style="margin-top: var(--space-md);">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section" style="background-color: var(--color-surface);">
+    <div class="container">
+      <div class="grid grid-2" style="align-items: center;">
+        <div>
+          <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80" alt="Professional car wash equipment" style="border-radius: var(--radius); box-shadow: var(--shadow);">
+        </div>
+        <div>
+          <h2 class="section-title">Why Customers Trust Us</h2>
+          <p style="margin-bottom: var(--space-lg);">We've built our reputation on delivering exceptional results and outstanding customer service. Here's what sets us apart.</p>
+          <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+            <div class="flex" style="gap: var(--space-md);">
+              <div class="card-icon" style="margin-bottom: 0; width: 48px; height: 48px; font-size: 24px;">
+                <i class="ph ph-check"></i>
+              </div>
+              <div>
+                <h4 style="margin-bottom: 4px;">Quality Guaranteed</h4>
+                <p style="font-size: var(--size-caption);">Every service comes with our satisfaction guarantee.</p>
+              </div>
+            </div>
+            <div class="flex" style="gap: var(--space-md);">
+              <div class="card-icon" style="margin-bottom: 0; width: 48px; height: 48px; font-size: 24px;">
+                <i class="ph ph-check"></i>
+              </div>
+              <div>
+                <h4 style="margin-bottom: 4px;">Eco-Friendly Products</h4>
+                <p style="font-size: var(--size-caption);">Safe for your car and the environment.</p>
+              </div>
+            </div>
+            <div class="flex" style="gap: var(--space-md);">
+              <div class="card-icon" style="margin-bottom: 0; width: 48px; height: 48px; font-size: 24px;">
+                <i class="ph ph-check"></i>
+              </div>
+              <div>
+                <h4 style="margin-bottom: 4px;">Convenient Booking</h4>
+                <p style="font-size: var(--size-caption);">Easy online scheduling at your fingertips.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Customer Reviews</h2>
+        <p class="section-subtitle">Real feedback from real customers who've experienced our premium services.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div style="margin-bottom: var(--space-md);">
+            <i class="ph ph-star-fill" style="color: var(--color-accent);"></i>
+            <i class="ph ph-star-fill" style="color: var(--color-accent);"></i>
+            <i class="ph ph-star-fill" style="color: var(--color-accent);"></i>
+            <i class="ph ph-star-fill" style="color: var(--color-accent);"></i>
+            <i class="ph ph-star-fill" style="color: var(--color-accent);"></i>
+          </div>
+          <p class="card-description" style="margin-bottom: var(--space-md);">"The attention to detail is incredible. My SUV hasn't looked this good since I drove it off the lot!"</p>
+          <div style="display: flex; align-items: center; gap: var(--space-sm);">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="Customer" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
+            <div>
+              <h4 style="font-size: var(--size-label); font-weight: var(--weight-label);">Robert Chen</h4>
+              <p style="font-size: var(--size-caption);">Lexus Owner</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div style="margin-bottom: var(--space-md);">
+            <i class="ph ph-star-fill" style="color: var(--color-accent);"></i>
+            <i class="ph ph-star-fill" style="color: var(--color-accent);"></i>
+            <i class="ph ph-star-fill" style="color: var(--color-accent);"></i>
+            <i class="ph ph-star-fill" style="color: var(--color-accent);"></i>
+            <i class="ph ph-star-fill" style="color: var(--color-accent);"></i>
+          </div>
+          <p class="card-description" style="margin-bottom: var(--space-md);">"Best car wash in the city! The ceramic coating is worth every penny. Five stars all the way!"</p>
+          <div style="display: flex; align-items: center; gap: var(--space-sm);">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Customer" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
+            <div>
+              <h4 style="font-size: var(--size-label); font-weight: var(--weight-label);">Emily Brown</h4>
+              <p style="font-size: var(--size-caption);">Mercedes Owner</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div style="margin-bottom: var(--space-md);">
+            <i class="ph ph-star-fill" style="color: var(--color-accent);"></i>
+            <i class="ph ph-star-fill" style="color: var(--color-accent);"></i>
+            <i class="ph ph-star-fill" style="color: var(--color-accent);"></i>
+            <i class="ph ph-star-fill" style="color: var(--color-accent);"></i>
+            <i class="ph ph-star-fill" style="color: var(--color-accent);"></i>
+          </div>
+          <p class="card-description" style="margin-bottom: var(--space-md);">"Professional, punctual, and passionate about what they do. My family has been customers for years."</p>
+          <div style="display: flex; align-items: center; gap: var(--space-sm);">
+            <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=100&q=80" alt="Customer" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
+            <div>
+              <h4 style="font-size: var(--size-label); font-weight: var(--weight-label);">David Wilson</h4>
+              <p style="font-size: var(--size-caption);">Audi Owner</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); color: white; text-align: center;">
+    <div class="container">
+      <h2 class="section-title" style="color: white;">Start Your Journey to a Cleaner Car</h2>
+      <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9); margin-bottom: var(--space-xl);">Join thousands of satisfied customers who trust us with their vehicles. Book your appointment today.</p>
+      <a href="services.html" class="btn btn-accent">Book Appointment</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-logo">Car Wash</h3>
+          <p class="footer-description">Premium car wash and auto detailing services. We treat every vehicle with the care and attention it deserves.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <nav class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="services.html" class="footer-link">Services</a>
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="blog.html" class="footer-link">Blog</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer-title">Services</h4>
+          <nav class="footer-links">
+            <a href="services.html" class="footer-link">Express Wash</a>
+            <a href="services.html" class="footer-link">Full Detail</a>
+            <a href="services.html" class="footer-link">Ceramic Coating</a>
+            <a href="services.html" class="footer-link">Interior Cleaning</a>
+            <a href="services.html" class="footer-link">Paint Correction</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact Info</h4>
+          <nav class="footer-links">
+            <a href="#" class="footer-link"><i class="ph ph-map-pin"></i> 123 Main Street, City</a>
+            <a href="tel:+1234567890" class="footer-link"><i class="ph ph-phone"></i> +1-234-567-8900</a>
+            <a href="mailto:info@carwash.com" class="footer-link"><i class="ph ph-envelope"></i> info@carwash.com</a>
+            <a href="#" class="footer-link"><i class="ph ph-clock"></i> Mon-Sat: 8AM - 6PM</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Car Wash. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Counter Animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const counters = document.querySelectorAll('.counter-number');
+      const speed = 200;
+
+      const animateCounter = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(() => animateCounter(counter), 1);
+        } else {
+          counter.innerText = target;
+        }
+      };
+
+      // Intersection Observer for counter animation
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            animateCounter(counter);
+            observer.unobserve(counter);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(counter => observer.observe(counter));
+    });
+  </script>
+</body>
+</html>
