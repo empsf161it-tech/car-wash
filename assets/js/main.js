@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initAnimations();
   initFormValidation();
   initScrollEffects();
+  initPasswordToggle();
 });
 
 /* ============================================
@@ -414,4 +415,52 @@ function throttle(func, limit) {
       setTimeout(() => inThrottle = false, limit);
     }
   };
+}
+
+/* ============================================
+   BACK TO TOP BUTTON
+   ============================================ */
+document.addEventListener('DOMContentLoaded', function() {
+  const backToTopBtn = document.getElementById('backToTop');
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+});
+
+/* ============================================
+   PASSWORD TOGGLE
+   ============================================ */
+
+function initPasswordToggle() {
+  const toggleIcons = document.querySelectorAll('.toggle-password');
+  
+  toggleIcons.forEach(icon => {
+    icon.addEventListener('click', function() {
+      // Find the sibling input within the relative wrapper
+      const input = this.previousElementSibling;
+      
+      if (input && input.tagName === 'INPUT') {
+        // Toggle the type attribute
+        const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+        input.setAttribute('type', type);
+        
+        // Toggle the icon class (assuming Phosphor icons are used)
+        this.classList.toggle('ph-eye');
+        this.classList.toggle('ph-eye-slash');
+      }
+    });
+  });
 }

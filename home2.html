@@ -15,7 +15,7 @@
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>ðŸš—</text></svg>">
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -131,6 +131,20 @@
       opacity: 0.9;
     }
 
+    @media (max-width: 1024px) {
+      .hero-2 {
+        min-height: auto;
+        padding-top: 120px;
+        padding-bottom: 60px;
+      }
+      
+      .typing-effect {
+        white-space: normal;
+        border-right: none;
+        animation: none;
+      }
+    }
+
     @media (max-width: 768px) {
       .hero-2-grid {
         grid-template-columns: 1fr;
@@ -143,6 +157,12 @@
       .hero-2-badges {
         flex-wrap: wrap;
       }
+
+      .typing-effect {
+        white-space: normal;
+        border-right: none;
+        animation: none;
+      }
     }
   </style>
 </head>
@@ -150,7 +170,7 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-container">
-      <a href="index.html" class="navbar-logo">Car Wash</a>
+      <a href="index.html" class="navbar-logo"><img src="assets/images/logo.jpg" alt="Car Wash Logo" class="brand-icon"> Car Wash</a>
 
       <ul class="navbar-nav">
         <li><a href="index.html" class="navbar-link">Home</a></li>
@@ -159,7 +179,6 @@
         <li><a href="about.html" class="navbar-link">About</a></li>
         <li><a href="blog.html" class="navbar-link">Blog</a></li>
         <li><a href="contact.html" class="navbar-link">Contact</a></li>
-        <li><a href="dashboard.html" class="navbar-link">Dashboard</a></li>
       </ul>
 
       <div class="navbar-actions">
@@ -182,7 +201,7 @@
   <div class="drawer-overlay"></div>
   <div class="drawer">
     <div class="drawer-header">
-      <span class="navbar-logo">Car Wash</span>
+      <span class="navbar-logo"><img src="assets/images/logo.jpg" alt="Car Wash Logo" class="brand-icon"> Car Wash</span>
       <button class="drawer-close" aria-label="Close menu">
         <i class="ph ph-x"></i>
       </button>
@@ -194,7 +213,6 @@
       <a href="about.html" class="drawer-link">About</a>
       <a href="blog.html" class="drawer-link">Blog</a>
       <a href="contact.html" class="drawer-link">Contact</a>
-      <a href="dashboard.html" class="drawer-link">Dashboard</a>
     </nav>
     <div class="drawer-actions">
       <button class="theme-toggle" aria-label="Toggle theme">
@@ -277,7 +295,7 @@
           </div>
           <h3 class="card-title">Exterior Wash</h3>
           <p class="card-description">Thorough exterior cleaning with premium products, hand wash, and wheel detailing.</p>
-          <a href="services.html" class="btn btn-secondary" style="margin-top: var(--space-md);">Learn More</a>
+          <a href="services.html" class="btn btn-secondary" style="margin-top: auto;">Learn More</a>
         </div>
         <div class="card">
           <div class="card-icon">
@@ -285,7 +303,7 @@
           </div>
           <h3 class="card-title">Interior Detail</h3>
           <p class="card-description">Deep cleaning of interior surfaces, upholstery, leather conditioning, and odor removal.</p>
-          <a href="services.html" class="btn btn-secondary" style="margin-top: var(--space-md);">Learn More</a>
+          <a href="services.html" class="btn btn-secondary" style="margin-top: auto;">Learn More</a>
         </div>
         <div class="card">
           <div class="card-icon">
@@ -293,7 +311,7 @@
           </div>
           <h3 class="card-title">Paint Protection</h3>
           <p class="card-description">Advanced ceramic coating and paint sealant for long-lasting protection and shine.</p>
-          <a href="services.html" class="btn btn-secondary" style="margin-top: var(--space-md);">Learn More</a>
+          <a href="services.html" class="btn btn-secondary" style="margin-top: auto;">Learn More</a>
         </div>
       </div>
     </div>
@@ -360,7 +378,7 @@
             <i class="ph ph-star-fill" style="color: var(--color-accent);"></i>
           </div>
           <p class="card-description" style="margin-bottom: var(--space-md);">"The attention to detail is incredible. My SUV hasn't looked this good since I drove it off the lot!"</p>
-          <div style="display: flex; align-items: center; gap: var(--space-sm);">
+          <div style="margin-top: auto; display: flex; align-items: center; justify-content: center; text-align: left; gap: var(--space-sm);">
             <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="Customer" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
             <div>
               <h4 style="font-size: var(--size-label); font-weight: var(--weight-label);">Robert Chen</h4>
@@ -377,7 +395,7 @@
             <i class="ph ph-star-fill" style="color: var(--color-accent);"></i>
           </div>
           <p class="card-description" style="margin-bottom: var(--space-md);">"Best car wash in the city! The ceramic coating is worth every penny. Five stars all the way!"</p>
-          <div style="display: flex; align-items: center; gap: var(--space-sm);">
+          <div style="margin-top: auto; display: flex; align-items: center; justify-content: center; text-align: left; gap: var(--space-sm);">
             <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Customer" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
             <div>
               <h4 style="font-size: var(--size-label); font-weight: var(--weight-label);">Emily Brown</h4>
@@ -394,7 +412,7 @@
             <i class="ph ph-star-fill" style="color: var(--color-accent);"></i>
           </div>
           <p class="card-description" style="margin-bottom: var(--space-md);">"Professional, punctual, and passionate about what they do. My family has been customers for years."</p>
-          <div style="display: flex; align-items: center; gap: var(--space-sm);">
+          <div style="margin-top: auto; display: flex; align-items: center; justify-content: center; text-align: left; gap: var(--space-sm);">
             <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=100&q=80" alt="Customer" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
             <div>
               <h4 style="font-size: var(--size-label); font-weight: var(--weight-label);">David Wilson</h4>
@@ -420,7 +438,7 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <h3 class="footer-logo">Car Wash</h3>
+          <h3 class="footer-logo"><img src="assets/images/logo.jpg" alt="Car Wash Logo" class="brand-icon"> Car Wash</h3>
           <p class="footer-description">Premium car wash and auto detailing services. We treat every vehicle with the care and attention it deserves.</p>
         </div>
         <div>
@@ -494,5 +512,11 @@
       counters.forEach(counter => observer.observe(counter));
     });
   </script>
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="ph ph-arrow-up"></i>
+  </button>
 </body>
 </html>
+
+

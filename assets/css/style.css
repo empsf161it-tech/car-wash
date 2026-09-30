@@ -70,6 +70,7 @@
 
 /* Dark Mode Overrides */
 [data-theme="dark"] {
+  --color-primary: #3E92CC;
   --color-background: #0F172A;
   --color-surface: #1E293B;
   --color-text: #F1F5F9;
@@ -77,6 +78,16 @@
   --color-border: #334155;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .btn-outline {
+  border: 2px solid var(--color-text) !important;
+  color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .btn-outline:hover {
+  background-color: var(--color-text) !important;
+  color: var(--color-background) !important;
 }
 
 /* ============================================
@@ -574,10 +585,15 @@ button {
 .drawer-actions {
   margin-top: auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: var(--space-md);
   padding-top: var(--space-lg);
   border-top: 1px solid var(--color-border);
+}
+
+.drawer-actions .btn {
+  flex: 1 1 100%;
 }
 
 /* ============================================
@@ -704,9 +720,10 @@ button {
    ============================================ */
 
 .footer {
-  background-color: var(--color-primary);
-  color: white;
+  background-color: var(--color-surface);
+  color: var(--color-text);
   padding: var(--space-3xl) 0 var(--space-lg);
+  border-top: 1px solid var(--color-border);
 }
 
 .footer-grid {
@@ -724,7 +741,7 @@ button {
 }
 
 .footer-description {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-light);
   line-height: 1.6;
 }
 
@@ -732,7 +749,7 @@ button {
   font-size: var(--size-h4);
   font-weight: var(--weight-h3);
   margin-bottom: var(--space-md);
-  color: white;
+  color: var(--color-text);
 }
 
 .footer-links {
@@ -742,20 +759,20 @@ button {
 }
 
 .footer-link {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-light);
   transition: var(--transition);
 }
 
 .footer-link:hover {
-  color: var(--color-accent);
+  color: var(--color-primary);
   padding-inline-start: 8px;
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: var(--space-lg);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-light);
   font-size: var(--size-caption);
 }
 
@@ -787,7 +804,9 @@ button {
     display: flex;
   }
 
-  .theme-toggle.navbar-theme {
+  .theme-toggle.navbar-theme,
+  .navbar-actions .rtl-toggle,
+  .navbar-actions .btn {
     display: none;
   }
 
@@ -810,8 +829,12 @@ button {
     --container-padding: var(--space-md);
   }
 
-  .hero-title {
-    font-size: 2.5rem;
+  h1, .hero-title, .hero-2-title {
+    font-size: 2.5rem !important;
+  }
+
+  h2, .section-title {
+    font-size: 2rem !important;
   }
 
   .hero-subtitle {
@@ -822,9 +845,10 @@ button {
     flex-direction: column;
   }
 
+  .grid-4,
   .grid-3,
   .grid-2 {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .section {
@@ -843,8 +867,12 @@ button {
     --container-padding: var(--space-sm);
   }
 
-  .hero-title {
-    font-size: 2rem;
+  h1, .hero-title, .hero-2-title {
+    font-size: 2rem !important;
+  }
+
+  h2, .section-title {
+    font-size: 1.75rem !important;
   }
 
   .drawer {
@@ -855,4 +883,64 @@ button {
     padding: 10px 24px;
     font-size: 0.9rem;
   }
+}
+
+/* Brand Logo Layout */
+.navbar-logo, .footer-logo, .login-logo, .register-logo, .coming-soon-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+[data-theme="dark"] .navbar-logo,
+[data-theme="dark"] .footer-logo,
+[data-theme="dark"] .login-logo,
+[data-theme="dark"] .register-logo,
+[data-theme="dark"] .coming-soon-logo {
+  color: var(--color-text);
+}
+
+.brand-icon {
+  height: 1.5em;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* ============================================
+   BACK TO TOP BUTTON
+   ============================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
 }
